@@ -1,0 +1,25 @@
+﻿@model CodeTheCloud.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2 style="color: #f5a004;">Manage Profile</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Password:</dt>
+        <dd>
+            
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+        </dd>
+    </dl>
+</div>
